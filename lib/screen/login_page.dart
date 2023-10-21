@@ -2,6 +2,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:food_app/screen/home_page.dart';
 import 'package:food_app/screen/sign_up.dart';
+import 'package:food_app/screen/welcome_page.dart';
 import 'package:food_app/screen/widget/my_text_field.dart';
 
 class LoginPage extends StatefulWidget {
@@ -102,7 +103,10 @@ class _LoginPageState extends State<LoginPage> {
             Icons.arrow_back_ios,
             color: Colors.white,
           ),
-          onPressed: () {},
+          onPressed: () {
+            Navigator.of(context).pushReplacement(
+                  MaterialPageRoute(builder: (contet) => WelcomePage()));
+          },
         ),
       ),
       body: Container(
