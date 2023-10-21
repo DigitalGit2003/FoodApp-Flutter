@@ -308,43 +308,37 @@ class _HomePageState extends State<HomePage> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 10),
-              child: TextField(
-                decoration: InputDecoration(
-                    hintText: "Search Food",
-                    hintStyle: TextStyle(color: Colors.white),
-                    prefixIcon: Icon(
-                      Icons.search,
-                      color: Colors.white,
-                    ),
-                    filled: true,
-                    fillColor: Color(0xff3a3e3e),
-                    border: OutlineInputBorder(
-                        borderSide: BorderSide.none,
-                        borderRadius: BorderRadius.circular(10))),
-              ),
-            ),
+            // Padding(
+            //   padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 10),
+            //   child: TextField(
+            //     decoration: InputDecoration(
+            //         hintText: "Search Food",
+            //         hintStyle: TextStyle(color: Colors.white),
+            //         prefixIcon: Icon(
+            //           Icons.search,
+            //           color: Colors.white,
+            //         ),
+            //         filled: true,
+            //         fillColor: Color(0xff3a3e3e),
+            //         border: OutlineInputBorder(
+            //             borderSide: BorderSide.none,
+            //             borderRadius: BorderRadius.circular(10))),
+            //   ),
+            // ),
             SingleChildScrollView(
               scrollDirection: Axis.horizontal,
-              child: Row(
-                children: [
-                  burger(),
-                  recipe(),
-                  pizza(),
-                  drink(),
-                  // categoriesContainer(
-                  //     onTap: () {}, image: 'images/1.png', name: "All"),
-                  // categoriesContainer(
-                  //     onTap: () {}, image: 'images/2.png', name: "Burger"),
-                  // categoriesContainer(
-                  //     onTap: () {}, image: 'images/3.png', name: "Recipe"),
-                  // categoriesContainer(
-                  //     onTap: () {}, image: 'images/4.png', name: "Pizza"),
-                  // categoriesContainer(
-                  //     onTap: () {}, image: 'images/5.png', name: "Drink"),
-                ],
-              ),
+              child: Container(
+                margin: EdgeInsets.only(top: 30, bottom: 30),
+                child: Row(
+                  children: [
+                    burger(),
+                    recipe(),
+                    pizza(),
+                    drink(),
+                    // Your other children here
+                  ],
+                ),
+              )
             ),
             Container(
               margin: EdgeInsets.symmetric(horizontal: 10),

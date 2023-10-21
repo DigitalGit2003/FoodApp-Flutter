@@ -12,43 +12,45 @@ class Categories extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        elevation: 0.0,
-        leading: IconButton(
-          icon: Icon(Icons.arrow_back),
-          onPressed: () {
-            Navigator.of(context).pushReplacement(
-                MaterialPageRoute(builder: (contet) => HomePage()));
-          },
+        appBar: AppBar(
+          elevation: 0.0,
+          leading: IconButton(
+            icon: Icon(Icons.arrow_back),
+            onPressed: () {
+              Navigator.of(context).pushReplacement(
+                  MaterialPageRoute(builder: (contet) => HomePage()));
+            },
+          ),
         ),
-      ),
-      body: GridView.count(
-          shrinkWrap: false,
-          primary: false,
-          crossAxisCount: 2,
-          childAspectRatio: 0.8,
-          crossAxisSpacing: 20,
-          mainAxisSpacing: 20,
-          children: list
-              .map(
-                (e) => BottomContainer(
-                  onTap: () {
-                    Navigator.of(context).pushReplacement(
-                      MaterialPageRoute(
-                        builder: (context) => DetailPage(
-                          image: e.image,
-                          name: e.name,
-                          price: e.price,
-                        ),
-                      ),
-                    );
-                  },
-                  image: e.image,
-                  price: e.price,
-                  name: e.name,
-                ),
-              )
-              .toList()),
-    );
+        body: Container(
+          margin: EdgeInsets.symmetric(horizontal: 10),
+          child: GridView.count(
+              shrinkWrap: false,
+              primary: false,
+              crossAxisCount: 2,
+              childAspectRatio: 0.8,
+              crossAxisSpacing: 20,
+              mainAxisSpacing: 20,
+              children: list
+                  .map(
+                    (e) => BottomContainer(
+                      onTap: () {
+                        Navigator.of(context).pushReplacement(
+                          MaterialPageRoute(
+                            builder: (context) => DetailPage(
+                              image: e.image,
+                              name: e.name,
+                              price: e.price,
+                            ),
+                          ),
+                        );
+                      },
+                      image: e.image,
+                      price: e.price,
+                      name: e.name,
+                    ),
+                  )
+                  .toList()),
+        ));
   }
 }
