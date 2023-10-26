@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:food_app/provider/my_provider.dart';
+import 'package:food_app/screen/ThankYouPage.dart';
 import 'package:food_app/screen/home_page.dart';
 import 'package:provider/provider.dart';
 
@@ -72,6 +73,15 @@ class CartPage extends StatelessWidget {
       ],
     );
   }
+
+  void _checkoutButtonPressed(BuildContext context) {
+    // Navigate to the thank you page when the button is pressed
+    Navigator.push(
+      context,
+      MaterialPageRoute(builder: (context) => ThankYouPage()),
+    );
+  }
+
   Widget build(BuildContext context) {
     MyProvider provider = Provider.of<MyProvider>(context);
     int total = provider.totalprice();
@@ -89,13 +99,12 @@ class CartPage extends StatelessWidget {
               "\$ $total",
               style: TextStyle(color: Colors.white, fontSize: 30),   
             ),
-            Text(
-              "Check Out",
-              style: TextStyle(
-                  color: Colors.white,     
-                  fontSize: 25,
-                  fontWeight: FontWeight.bold),
-            )
+            ElevatedButton(
+              onPressed: () {
+                _checkoutButtonPressed(context);
+              },
+              child: Text("Checkout"),
+            ),
           ],
         ),
       ),
