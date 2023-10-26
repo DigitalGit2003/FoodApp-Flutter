@@ -1,3 +1,4 @@
+// ignore_for_file: override_on_non_overriding_member
 import 'package:flutter/material.dart';
 import 'package:food_app/provider/my_provider.dart';
 import 'package:food_app/screen/ThankYouPage.dart';
